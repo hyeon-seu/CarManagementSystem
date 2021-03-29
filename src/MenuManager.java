@@ -38,7 +38,6 @@ public class MenuManager {
 
 		System.out.print("Car NAME : ");
 		String carname = input.next();
-		System.out.print(carname);
 		System.out.print("Year of Manufacture for Car : ");
 		int caryears = input.nextInt();
 		System.out.print("The price of a Car($): ");
@@ -67,8 +66,8 @@ public class MenuManager {
 
 
 
-	
 
-	
+
+
 
 
