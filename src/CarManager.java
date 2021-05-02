@@ -2,7 +2,9 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 import Car.Car;
+import Car.CarKind;
 import Car.GermanCar;
+import Car.ItalianCar;
 
 public class CarManager {
 	ArrayList<Car> cars= new ArrayList<Car>();
@@ -17,17 +19,24 @@ public class CarManager {
 		while (kind != 1 && kind != 2) {
 			System.out.println("1 for Korean");
 			System.out.println("2 for German");
-			System.out.print("Selcet num for Car Kind between 1 and 2 : ");
+			System.out.println("3 for Italian");
+			System.out.print("Selcet num 1,2, or 3 for Car Kind : ");
 			kind = input.nextInt();
 			if (kind ==1) {
-				car = new Car();
+				car = new Car(CarKind.Korean);
 				car.getUserInput(input);
 				cars.add(car);
 				break;
 
 			}
 			else if (kind ==2) {
-				car = new GermanCar();
+				car = new GermanCar(CarKind.German);
+				car.getUserInput(input);
+				cars.add(car);
+				break;
+			}
+			else if (kind ==3) {
+				car = new ItalianCar(CarKind.ltalian);
 				car.getUserInput(input);
 				cars.add(car);
 				break;
@@ -36,6 +45,7 @@ public class CarManager {
 				System.out.print("Selcet num for Car Kind between 1 and 2 : ");
 			}
 		}
+	
 	}
 
 	public void deletecars() {

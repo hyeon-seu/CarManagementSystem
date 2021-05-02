@@ -3,6 +3,10 @@ package Car;
 import java.util.Scanner;
 
 public class GermanCar extends Car {
+	
+	public GermanCar(CarKind kind) {
+		super(kind);
+	}
 
 	public void getUserInput(Scanner input) {
 		System.out.print("Car ID : ");
