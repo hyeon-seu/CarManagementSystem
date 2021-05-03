@@ -41,7 +41,7 @@ public class ItalianCar extends Car {
 		answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
-			System.out.print("Do you know when you came to Korea? (Y/N) : ");
+			System.out.print("Do you know when this car came to Korea? (Y/N) : ");
 			answer = input.next().charAt(0);
 			if (answer == 'y' || answer == 'Y') {
 				System.out.print("Year of came to korea : ");
