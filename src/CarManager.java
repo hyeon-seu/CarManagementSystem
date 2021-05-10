@@ -3,11 +3,13 @@ import java.util.Scanner;
 
 import Car.Car;
 import Car.CarKind;
+import Car.CarInput;
 import Car.GermanCar;
 import Car.ItalianCar;
+import Car.KoreanCar;
 
 public class CarManager {
-	ArrayList<Car> cars= new ArrayList<Car>();
+	ArrayList<CarInput> cars= new ArrayList<CarInput>();
 	Scanner input;
 	CarManager(Scanner input){
 		this.input = input;
@@ -15,7 +17,7 @@ public class CarManager {
 
 	public void addcars() {
 		int kind = 0;
-		Car car;
+		CarInput carInput;
 		while (kind != 1 && kind != 2) {
 			System.out.println("1 for Korean");
 			System.out.println("2 for German");
@@ -23,29 +25,29 @@ public class CarManager {
 			System.out.print("Selcet num 1,2, or 3 for Car Kind : ");
 			kind = input.nextInt();
 			if (kind ==1) {
-				car = new Car(CarKind.Korean);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new KoreanCar(CarKind.Korean);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 
 			}
 			else if (kind ==2) {
-				car = new GermanCar(CarKind.German);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new GermanCar(CarKind.German);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 			}
 			else if (kind ==3) {
-				car = new ItalianCar(CarKind.ltalian);
-				car.getUserInput(input);
-				cars.add(car);
+				carInput = new ItalianCar(CarKind.ltalian);
+				carInput.getUserInput(input);
+				cars.add(carInput);
 				break;
 			}
 			else {
 				System.out.print("Selcet num for Car Kind between 1 and 2 : ");
 			}
 		}
-	
+
 	}
 
 	public void deletecars() {
@@ -74,8 +76,8 @@ public class CarManager {
 		System.out.print("Car ID : ");
 		int carid = input.nextInt();
 		for (int i= 0; i<cars.size(); i ++) {
-			Car car = cars.get(i);
-			if (car.getId() ==carid) {
+			CarInput carInput = cars.get(i);
+			if (carInput.getId() ==carid) {
 				int num = -1;
 				while (num != 5) {
 					System.out.println("**** Cars Info Edit Menu  ****");
@@ -89,22 +91,22 @@ public class CarManager {
 					if (num == 1) {
 						System.out.print("Car ID : ");
 						int id = input.nextInt();
-						car.setId(id);
+						carInput.setId(id);
 					}
 					else if (num == 2) {
 						System.out.print("Car NAME : ");
 						String name = input.next();
-						car.setName(name);
+						carInput.setName(name);
 					}
 					else if (num == 3) {
 						System.out.print("Year of Manufacture for Car : ");
 						int year = input.nextInt();
-						car.setYear(year);
+						carInput.setYear(year);
 					}
 					else if (num == 4) {
 						System.out.print("The price of a Car($): ");
 						int price = input.nextInt();
-						car.setPrice(price);
+						carInput.setPrice(price);
 					}
 					else {
 						continue;

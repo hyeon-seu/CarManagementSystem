@@ -2,15 +2,14 @@ package Car;
 
 import java.util.Scanner;
 
-public class ItalianCar extends Car {
+public class ItalianCar extends Car implements CarInput {
 	protected int Kyear;
-	protected int Kprice;
-	
+
 	public ItalianCar(CarKind kind) {
 		super(kind);
 	}
 
-	
+
 	public void getUserInput(Scanner input) {
 		System.out.print("Car ID : ");
 		int id = input.nextInt();
@@ -65,20 +64,20 @@ public class ItalianCar extends Car {
 		String skind = "none";
 		switch(this.kind) {
 		case Korean :
-			skind = "K.";
+			skind = "Korean.";
 			break;
 		case German:
-			skind = "G.";
+			skind = "German.";
 			break;
 		case American:
-			skind = "A.";
-		    break;
+			skind = "American.";
+			break;
 		case ltalian :
-			skind = "I.";
+			skind = "Italian.";
 			break;
 		default:
 		}
-		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price + " K year : " + this.year + " K price(won) : " + this.price);
+		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price + " K year : " + this.year );
 	}
 
 

@@ -2,7 +2,7 @@ package Car;
 
 import java.util.Scanner;
 
-public class Car {
+public abstract class Car { 
 	protected CarKind kind = CarKind.Korean;
 	protected int id;
 	protected String name;
@@ -11,7 +11,7 @@ public class Car {
 
 	public Car() {
 	}
-	
+
 	public Car(CarKind kind) {
 		this.kind = kind;
 	}
@@ -27,7 +27,7 @@ public class Car {
 		this.year = year;
 		this.price = price;
 	}
-	
+
 	public Car(CarKind kind , int id, String name, int year,int price) {
 		this.kind =kind;
 		this.id = id;
@@ -75,43 +75,6 @@ public class Car {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	
-	public void printInfo() {
-		String skind = "none";
-		switch(this.kind) {
-		case Korean :
-			skind = "K.";
-			break;
-		case German:
-			skind = "G.";
-			break;
-		case American:
-			skind = "A.";
-		    break;
-		case ltalian :
-			skind = "I.";
-			break;
-		default:
-		}
-		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price);
-	}
 
-	public void getUserInput(Scanner input) {
-		System.out.print("Car ID : ");
-		int id = input.nextInt();
-		this.setId(id);
-
-		System.out.print("Car NAME : ");
-		String name = input.next();
-		this.setName(name);
-
-		System.out.print("Year of Manufacture for Car : ");
-		int year = input.nextInt();
-		this.setYear(year);
-
-		System.out.print("The price of a Car($): ");
-		int price = input.nextInt();
-		this.setPrice(price);
-	}
-
+	public abstract void printInfo();
 }
