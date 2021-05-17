@@ -2,65 +2,52 @@ package Car;
 
 import java.util.Scanner;
 
-public class ItalianCar extends Car implements CarInput {
+import excception.YearFomatException;
+
+public class ItalianCar extends UnknownCar{
 	protected int Kyear;
 
 	public ItalianCar(CarKind kind) {
 		super(kind);
 	}
 
-
 	public void getUserInput(Scanner input) {
-		System.out.print("Car ID : ");
-		int id = input.nextInt();
-		this.setId(id);
-
-		System.out.print("Car NAME : ");
-		String name = input.next();
-		this.setName(name);
-
+		setCarID(input);
+		setCarName(input);
+		setCarYearwithYN(input);
+		setCarKorYearwithYN(input);
+		setCarPrice(input);
+	}
+	public void setCarKorYearwithYN(Scanner input){
 		char answer = 'x';
-		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
-		{
-			System.out.print("Do you know the year of the car? (Y/N) : ");
-			answer = input.next().charAt(0);
-			if (answer == 'y' || answer == 'Y') {
-				System.out.print("Year of Manufacture for Car : ");
-				int year = input.nextInt();
-				this.setYear(year);
-				break;
-			}
-			else if(answer == 'n' || answer == 'N') {
-				this.setYear(0000);
-				break;
-			}
-			else {
-			}
-		} 
-		answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')
 		{
 			System.out.print("Do you know when this car came to Korea? (Y/N) : ");
 			answer = input.next().charAt(0);
-			if (answer == 'y' || answer == 'Y') {
-				System.out.print("Year of came to korea : ");
-				int year = input.nextInt();
-				this.setYear(year);
-				break;
+			try {
+				if (answer == 'y' || answer == 'Y') {
+					setCarYear(input);
+					break;
+				}
+				else if(answer == 'n' || answer == 'N') {
+					this.setYear(0000);
+					break;
+				}
+				else {
+				}
 			}
-			else if(answer == 'n' || answer == 'N') {
-				this.setYear(0000);
-				break;
-			}
-			else {
+			catch(YearFomatException e) {
+				System.out.println("Enter only the year after 1950!!");
 			}
 		}
-
-		System.out.print("The price of a Car($): ");
-		int price = input.nextInt();
-		this.setPrice(price);
 	}
+
 	public void printInfo() {
+		String skind = getKindString();
+		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price + " K year : " + this.year );
+	}
+
+	public String getKindString() {
 		String skind = "none";
 		switch(this.kind) {
 		case Korean :
@@ -77,9 +64,7 @@ public class ItalianCar extends Car implements CarInput {
 			break;
 		default:
 		}
-		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price + " K year : " + this.year );
+		return skind;
 	}
-
-
 
 }
