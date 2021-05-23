@@ -1,17 +1,22 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import Car.Car;
 import Car.CarKind;
 import Car.CarInput;
 import Car.GermanCar;
 import Car.ItalianCar;
 import Car.KoreanCar;
 
-public class CarManager {
+public class CarManager implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5916571094697801186L;
+	
 	ArrayList<CarInput> cars= new ArrayList<CarInput>();
-	Scanner input;
+	transient Scanner input;
 	CarManager(Scanner input){
 		this.input = input;
 	}

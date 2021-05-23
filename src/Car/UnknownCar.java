@@ -5,7 +5,7 @@ import java.util.Scanner;
 import excception.YearFomatException;
 
 public abstract class UnknownCar extends Car {
-	
+
 	public UnknownCar(CarKind kind) {
 		super(kind);
 	}
@@ -21,7 +21,7 @@ public abstract class UnknownCar extends Car {
 		String skind = getKindString();
 		System.out.println("kind :" + skind +"id : " + this.id +  "  name : " + this.name + "  year : " + this.year + "  price($) : " + this.price);
 	}
-	
+
 	public void setCarYearwithYN(Scanner input) {
 		char answer = 'x';
 		while(answer != 'y' && answer != 'Y' && answer != 'n' && answer != 'N')

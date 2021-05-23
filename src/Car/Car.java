@@ -1,10 +1,15 @@
 package Car;
 
+import java.io.Serializable;
 import java.util.Scanner;
 
 import excception.YearFomatException;
 
-public abstract class Car implements CarInput { 
+public abstract class Car implements CarInput, Serializable { 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1119381082865514332L;
 	protected CarKind kind = CarKind.Korean;
 	protected int id;
 	protected String name;
