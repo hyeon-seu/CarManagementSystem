@@ -14,7 +14,7 @@ public class CarManager implements Serializable{
 	 * 
 	 */
 	private static final long serialVersionUID = 5916571094697801186L;
-	
+
 	ArrayList<CarInput> cars= new ArrayList<CarInput>();
 	transient Scanner input;
 	CarManager(Scanner input){

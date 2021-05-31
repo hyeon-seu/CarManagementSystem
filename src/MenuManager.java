@@ -14,11 +14,14 @@ public class MenuManager {
 	static EventLogger logger = new EventLogger("log.txt");
 
 	public static void main(String[] args) {
-		
+
 		Scanner input = new Scanner(System.in);
 		CarManager carManager = getObject("carmanager.ser");
 		if(carManager == null) {
 			carManager = new CarManager(input);
+		}
+		else {
+			carManager.input = input;
 		}
 		selectMenu(input, carManager);
 		putObject(carManager, "carmanager.ser");
