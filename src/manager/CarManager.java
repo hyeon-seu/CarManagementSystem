@@ -1,9 +1,12 @@
+package manager;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import Car.CarKind;
+import Car.Car;
 import Car.CarInput;
 import Car.GermanCar;
 import Car.ItalianCar;
@@ -132,6 +135,14 @@ public class CarManager implements Serializable{
 		for (int i= 0; i<cars.size(); i ++) {
 			cars.get(i).printInfo();
 		}
+	}
+	
+	public int size() {
+		return cars.size();
+	}
+	
+	public CarInput get(int index) {
+		return (Car) cars.get(index);
 	}
 
 	public void shwEditMenu() {

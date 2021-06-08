@@ -1,3 +1,5 @@
+package manager;
+
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -8,6 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import Gui.WindowFrame;
 import log.EventLogger;
 
 public class MenuManager {
@@ -23,6 +26,8 @@ public class MenuManager {
 		else {
 			carManager.input = input;
 		}
+		
+		WindowFrame fram = new WindowFrame(carManager);
 		selectMenu(input, carManager);
 		putObject(carManager, "carmanager.ser");
 

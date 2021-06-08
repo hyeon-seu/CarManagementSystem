@@ -3,9 +3,9 @@ package Gui;
 public class GuiTest {
 
 	public static void main(String[] args) {
-		//MenuSelection menuselection = new MenuSelection();
+		//WindowFrame fram = new WindowFrame();
 		//CarAdder caradder = new CarAdder();
-		CarViewer carviewer = new CarViewer();
+		//CarViewer carviewer = new CarViewer();
 
 	}
 
