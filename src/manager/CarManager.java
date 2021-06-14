@@ -24,6 +24,16 @@ public class CarManager implements Serializable{
 		this.input = input;
 	}
 
+	public void addcars(String id, String name, String year, String price) {
+		CarInput carInput = new KoreanCar(CarKind.Korean);
+		carInput.getUserInput(input);
+		cars.add(carInput);
+	}
+	
+	public void addcars(CarInput carInput ) {
+		cars.add(carInput);
+	}
+
 	public void addcars() {
 		int kind = 0;
 		CarInput carInput;
@@ -136,11 +146,11 @@ public class CarManager implements Serializable{
 			cars.get(i).printInfo();
 		}
 	}
-	
+
 	public int size() {
 		return cars.size();
 	}
-	
+
 	public CarInput get(int index) {
 		return (Car) cars.get(index);
 	}

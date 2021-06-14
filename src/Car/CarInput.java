@@ -13,7 +13,7 @@ public interface CarInput {
 	public int getYear();
 	public void setYear(int year) throws YearFomatException;
 	public int getPrice();
-	public void setPrice(int price) ;
+	public void setPrice(int Price) ;
 	public void getUserInput(Scanner input);
 	public void printInfo();
 	public void setCarID(Scanner input);

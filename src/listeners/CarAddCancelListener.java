@@ -8,11 +8,11 @@ import Gui.CarAdder;
 import Gui.CarViewer;
 import Gui.WindowFrame;
 
-public class ButtonAddListener implements ActionListener {
+public class CarAddCancelListener implements ActionListener {
 
 	WindowFrame frame;
 
-	public ButtonAddListener(WindowFrame frame) {
+	public CarAddCancelListener(WindowFrame frame) {
 		this.frame = frame;
 		// TODO Auto-generated constructor stub
 	}
@@ -20,7 +20,7 @@ public class ButtonAddListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		frame.getContentPane().removeAll();
-		frame.getContentPane().add(frame.getCaradder());
+		frame.getContentPane().add(frame.getMenuselection());
 		frame.revalidate();
 		frame.repaint();
 	}

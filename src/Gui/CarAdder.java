@@ -7,13 +7,19 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 
+import listeners.CarAddCancelListener;
+import listeners.CarAdderListener;
+import manager.CarManager;
+
 public class CarAdder extends JPanel {
 
-	WindowFrame frame;
+	WindowFrame frame;	
+	CarManager carManager;
 
-	public CarAdder(WindowFrame frame) {
+	public CarAdder(WindowFrame frame,CarManager carManager) {
 		this.frame =frame;
-
+		this.carManager = carManager;
+	
 		JPanel panel = new JPanel();
 		panel.setLayout(new SpringLayout());
 
@@ -38,11 +44,18 @@ public class CarAdder extends JPanel {
 		JLabel labelPrice = new JLabel("Price : ", JLabel.TRAILING);
 		JTextField fieldPrice = new JTextField(10);
 		labelPrice.setLabelFor(fieldPrice);
+		
+		JButton saveButton = new JButton("Save");
+		saveButton.addActionListener(new CarAdderListener(fieldID,fieldName,fieldYear,fieldPrice,carManager));
+		
+		JButton cancelButton = new JButton("Cancel");
+		cancelButton.addActionListener(new CarAddCancelListener(frame));
+		
 		panel.add(labelPrice);
 		panel.add(fieldPrice);
 
-		panel.add(new JButton("Save"));
-		panel.add(new JButton("Cancel"));
+		panel.add(saveButton);
+		panel.add(cancelButton);
 
 		SpringUtilities.makeCompactGrid(panel,5,2,6,6,6,6);
 

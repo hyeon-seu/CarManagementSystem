@@ -2,6 +2,8 @@ package Car;
 
 import java.util.Scanner;
 
+import excception.YearFomatException;
+
 public class KoreanCar extends Car {
 
 	public KoreanCar(CarKind kind) {

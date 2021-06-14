@@ -26,7 +26,7 @@ public class MenuManager {
 		else {
 			carManager.input = input;
 		}
-		
+
 		WindowFrame fram = new WindowFrame(carManager);
 		selectMenu(input, carManager);
 		putObject(carManager, "carmanager.ser");
@@ -99,9 +99,7 @@ public class MenuManager {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
 		return carManager;
-
 	}
 	public static void putObject(CarManager carManager, String filename) {
 		try {

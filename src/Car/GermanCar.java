@@ -2,6 +2,8 @@ package Car;
 
 import java.util.Scanner;
 
+import excception.YearFomatException;
+
 public class GermanCar extends UnknownCar {
 
 	public GermanCar(CarKind kind) {
@@ -14,4 +16,5 @@ public class GermanCar extends UnknownCar {
 		setCarYearwithYN(input);
 		setCarPrice(input);
 	}
+
 }

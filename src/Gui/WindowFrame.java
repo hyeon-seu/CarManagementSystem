@@ -7,7 +7,7 @@ import manager.CarManager;
 public class WindowFrame extends JFrame{
 
 	CarManager carManager;
-	
+
 	MenuSelection menuselection;
 	CarAdder caradder;
 	CarViewer carviewer;
@@ -15,7 +15,7 @@ public class WindowFrame extends JFrame{
 	public WindowFrame(CarManager carManager) {
 		this.carManager = carManager;
 		this.menuselection = new MenuSelection(this);
-		this.caradder = new CarAdder(this);
+		this.caradder = new CarAdder(this,this.carManager);
 		this.carviewer = new CarViewer(this,this.carManager);
 
 		this.setSize(500,300);
